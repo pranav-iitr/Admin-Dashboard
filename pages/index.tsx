@@ -44,7 +44,7 @@ function Index() {
 
   useEffect(() => {
     if (search.length > 3) {
-      const newData = paginate(trigramSearch(search, sD), 10);
+      const newData:any = paginate(trigramSearch(search, sD), 10);
       setData(newData);
     } else {
       setData(paginate(sD, 10));
@@ -69,8 +69,8 @@ function Index() {
             <button
               className="border-2 bg-red-400 rounded-md p-2"
               onClick={() => {
-                const newData = [];
-                const selData = [];
+                const newData:any = [];
+                const selData:any = [];
                 Display.map((item: any, id) => {
                   if (!SlectedArray[id]) {
                     console.log("item", item, SlectedArray[id]);
@@ -99,7 +99,7 @@ function Index() {
                       console.log("prod", prod);
 
                       // console.log("intialState", intialState);
-                      const newData = SlectedArray.map((i: any) => !prod);
+                      const newData:any = SlectedArray.map((i: any) => !prod);
                       console.log("newData", newData);
                       setSlectedArray(newData);
                     }}
@@ -125,7 +125,7 @@ function Index() {
                       <input
                         checked={SlectedArray[id]}
                         onChange={() => {
-                          const newData = SlectedArray.map(
+                          const newData:any = SlectedArray.map(
                             (i: any, index: any) => {
                               if (index == id) {
                                 return !i;
@@ -158,7 +158,7 @@ function Index() {
                       <button
                         className="border-2 border-red-400 rounded-md p-2"
                         onClick={() => {
-                          const newData = Display.filter(
+                          const newData:any = Display.filter(
                             (i: any) => i.id != item.id
                           );
                           const nd = SlectedArray.filter(
